@@ -1,0 +1,13 @@
+services:
+  dst_server:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: dst_server
+    volumes:
+      - ./MyDediServer:/app/klei/DoNotStarveTogether/MyDediServer
+      - ./run.sh:/app/run.sh  # 映射运行脚本
+    ports:
+      - "10889:10889"
+      - "11000:11000"
+      - "11001:11001"
